@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -14,9 +15,13 @@ class UserController extends Controller
         //DB::update('update users set name = ? where id = 1', ['Mattia']);
         //$users = DB::select('select * from users');
         //return $users;
-        DB::delete('delete from users where id = 1');
-        $users = DB::select('select * from users');
-        return $users;
+        //DB::delete('delete from users where id = 1');
+        //$users = DB::select('select * from users');
+        //return $users;
+
+        $user = new User();
+        //var_dump($user);
+        //dd($user);
         return view('home');
     }
 }
