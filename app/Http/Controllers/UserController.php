@@ -22,6 +22,10 @@ class UserController extends Controller
         $user = new User();
         //var_dump($user);
         //dd($user);
+        $user->name = 'Mattia';
+        $user->email = 'fasoxy@gmail.com';
+        $user->password = 'password';
+        $user->save();
         return view('home');
     }
 }
