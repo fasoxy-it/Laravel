@@ -11,7 +11,10 @@ class UserController extends Controller
         //DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['fasoxy', 'fasoxy@gmail.com', 'password']);
         //$users = DB::select('select * from users');
         //return $users;
-        DB::update('update users set name = ? where id = 1', ['Mattia']);
+        //DB::update('update users set name = ? where id = 1', ['Mattia']);
+        //$users = DB::select('select * from users');
+        //return $users;
+        DB::delete('delete from users where id = 1');
         $users = DB::select('select * from users');
         return $users;
         return view('home');
