@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function index() {
-        DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['fasoxy', 'fasoxy@gmail.com', 'password']);
+        //DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['fasoxy', 'fasoxy@gmail.com', 'password']);
+        $users = DB::select('select * from users');
+        return $users;
         return view('home');
     }
 }
