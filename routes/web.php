@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function () {
-    return view('home');
-});
+Route::get('/user', 'UserController@index');
+
+
