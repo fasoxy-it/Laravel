@@ -27,8 +27,10 @@ class UserController extends Controller
         //$user->password = 'password';
         //$user->save();
 
-        $user = User::all();
-        return $user;
+        //$user = User::all();
+        //return $user;
+
+        User::where('id', 3)->delete();
 
         return view('home');
     }
