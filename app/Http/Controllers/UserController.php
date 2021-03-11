@@ -39,7 +39,7 @@ class UserController extends Controller
         $data = [
             'name' => 'Simone',
             'email' => 'fasoxx@gmail.com',
-            'password' => 'password'
+            'password' => bcrypt('password')
         ];
 
         User::create($data);
