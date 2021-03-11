@@ -36,13 +36,13 @@ class UserController extends Controller
         //$user = User::all();
         //return $user;
 
-        $data = [
-            'name' => 'Simone',
-            'email' => 'fasoxx@gmail.com',
-            'password' => bcrypt('password')
-        ];
+        //$data = [
+        //    'name' => 'Simone',
+        //    'email' => 'fasoxx@gmail.com',
+        //    'password' => 'password'
+        //];
 
-        User::create($data);
+        //User::create($data);
 
         $user = User::all();
         return $user;
