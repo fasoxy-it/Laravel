@@ -19,13 +19,17 @@ class UserController extends Controller
         //$users = DB::select('select * from users');
         //return $users;
 
-        $user = new User();
+        //$user = new User();
         //var_dump($user);
         //dd($user);
-        $user->name = 'Mattia';
-        $user->email = 'fasoxy@gmail.com';
-        $user->password = 'password';
-        $user->save();
+        //$user->name = 'Mattia';
+        //$user->email = 'fasoxy@gmail.com';
+        //$user->password = 'password';
+        //$user->save();
+
+        $user = User::all();
+        return $user;
+
         return view('home');
     }
 }
