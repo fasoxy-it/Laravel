@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,8 +21,8 @@ Route::get('/', function () {
 
 Route::get('/user', 'UserController@index');
 
-Route::post('/upload', function(){
-    dd(request()->all());
+Route::post('/upload', function(Request $request){
+    dd($request->all());
 });
 
 
