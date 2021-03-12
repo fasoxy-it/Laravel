@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::get('/user', 'UserController@index');
 
 Route::post('/upload', function(Request $request){
-    dd($request->hasFile('image'));
+    $request->image->store('images');
+    return 'Upload Image';
 });
 
 
