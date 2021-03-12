@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Route::get('/user', 'UserController@index');
 
+Route::post('/upload', function(){
+    dd(request()->all());
+});
+
 
 
 Auth::routes();
