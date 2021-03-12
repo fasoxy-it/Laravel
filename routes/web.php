@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/user', 'UserController@index');
 
 Route::post('/upload', function(Request $request){
-    dd($request->image);
+    dd($request->hasFile('image'));
 });
 
 
