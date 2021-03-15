@@ -49,4 +49,14 @@ class UserController extends Controller
 
         return view('home');
     }
+
+    public function uploadAvatar(Request $request) {
+        if($request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('images', $filename, 'public');
+            User::find(1)->update(['avatar' => $filename]);
+
+        }
+        return redirect()->back();
+    }
 }
