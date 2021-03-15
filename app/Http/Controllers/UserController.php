@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
-use GuzzleHttp\Psr7\Request as Psr7Request;
-use Illuminate\Http\Client\Request as ClientRequest;
 
 class UserController extends Controller
 {
@@ -50,14 +48,5 @@ class UserController extends Controller
         return $user;
 
         return view('home');
-    }
-
-    public function uploadAvatar(Request $request) {
-        if($request->hasFile('image')) {
-            dd($request->image->getClientOriginalName());
-        }
-        //$request->image->store('images', 'public');
-        User::find(1)->update(['avatar'=>'something']);
-        return 'Image Uploaded';
     }
 }
