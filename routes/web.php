@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/todos', 'ToDoController@index');
+
+Route::get('/todos/create', 'ToDoController@create');
+
+Route::get('/todos/edit', 'ToDoController@edit');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
