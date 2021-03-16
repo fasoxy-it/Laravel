@@ -18,6 +18,9 @@
                 </div>
 
                 <div class="card-body">
+                    @if (session()->has('message'))
+                        <div class="alert-success">{{session()->get('message')}}</div>
+                    @endif
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="image"/>
