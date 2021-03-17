@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class ToDoController extends Controller
 {
     public function index() {
@@ -12,6 +14,10 @@ class ToDoController extends Controller
 
     public function create() {
         return view('todos.create');
+    }
+
+    public function store(Request $request) {
+        dd($request->all());
     }
 
     public function edit() {
