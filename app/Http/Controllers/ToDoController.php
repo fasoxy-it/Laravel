@@ -12,7 +12,8 @@ use function GuzzleHttp\Promise\all;
 class ToDoController extends Controller
 {
     public function index() {
-        return view('todos.index');
+        $todos = ToDo::all();
+        return view('todos.index')->with(['todos' => $todos]);
     }
 
     public function create() {
