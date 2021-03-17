@@ -11,6 +11,7 @@
     <body>
         <div class="text-center pt-10">
             <h1 class="text">What next you need ToDo?</h1>
+            <x-alert/>
             <form method="post" action="/todos/create" class="py-5">
                 @csrf
                 <input type="text" name="title" class="py-2 px-2 border rounded">
