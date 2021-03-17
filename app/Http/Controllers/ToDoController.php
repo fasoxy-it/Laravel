@@ -18,9 +18,9 @@ class ToDoController extends Controller
     }
 
     public function store(Request $request) {
-        if(!$request->title) {
-            return redirect()->back()->with('error', 'Please Insert ToDo');
-        }
+        $request->validate([
+            'title' => 'required|max:255'
+        ]);
         ToDo::create($request->all());
         return redirect()->back()->with('message', 'ToDo Created Successfully');
     }
