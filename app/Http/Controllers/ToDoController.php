@@ -12,7 +12,7 @@ use function GuzzleHttp\Promise\all;
 class ToDoController extends Controller
 {
     public function index() {
-        $todos = ToDo::all();
+        $todos = ToDo::orderBy('completed')->get();
         return view('todos.index', compact('todos'));
     }
 
@@ -22,7 +22,6 @@ class ToDoController extends Controller
 
     public function store(ToDoCreateRequest $request) {
         ToDo::create($request->all());
-        // Uploading Image
         return redirect()->back()->with('message', 'ToDo Created Successfully.');
     }
 
