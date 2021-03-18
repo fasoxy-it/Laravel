@@ -21,7 +21,7 @@ Route::get('/todos/create', 'ToDoController@create');
 
 Route::post('/todos/create', 'ToDoController@store');
 
-Route::get('/todos/{id}/edit', 'ToDoController@edit');
+Route::get('/todos/{todo}/edit', 'ToDoController@edit');
 
 
 Route::get('/', function () {
