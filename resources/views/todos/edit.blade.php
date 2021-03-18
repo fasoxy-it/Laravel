@@ -1,1 +1,7 @@
-Edit New ToDo
+@extends('todos.layout')
+
+@section('content')
+
+    {{$todo->title}}
+
+@endsection

@@ -25,7 +25,8 @@ class ToDoController extends Controller
         return redirect()->back()->with('message', 'ToDo Created Successfully.');
     }
 
-    public function edit() {
-        return view('todos.edit');
+    public function edit($id) {
+        $todo = ToDo::find($id);
+        return view('todos.edit', compact('todo'));
     }
 }

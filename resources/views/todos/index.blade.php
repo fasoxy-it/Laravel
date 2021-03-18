@@ -2,11 +2,15 @@
 
 @section('content')
 
-    <h1 class="text">All ToDos</h1>
-    <ul>
+    <div class="flex justify-center">
+        <h1 class="text">All ToDos</h1>
+        <a href="/todos/create" class="mx-5 py-1 px-1 bg-blue-400 cursor-pointer rounded text-white">Create New</a>
+    </div>
+    <ul class="my-5">
         @foreach($todos as $todo)
-        <li>
-            {{$todo->title}}
+        <li class="flex justify-center py-2">
+            <p>{{$todo->title}}</p>
+            <a href="{{'/todos/' . $todo->id . '/edit/'}}" class="x-5 py-1 px-1 bg-orange-400 cursor-pointer rounded text-white">Edit</a>
         </li>
         @endforeach
     </ul>
