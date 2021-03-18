@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text">What next you need ToDo?</h1>
+    <h1 class="text-2x1 border-b pb-4">What next you need ToDo?</h1>
     <x-alert/>
     <form method="post" action="/todos/create" class="py-5">
         @csrf

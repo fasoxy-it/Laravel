@@ -22,6 +22,7 @@ class ToDoController extends Controller
 
     public function store(ToDoCreateRequest $request) {
         ToDo::create($request->all());
+        // Uploading Image
         return redirect()->back()->with('message', 'ToDo Created Successfully.');
     }
 
@@ -29,7 +30,7 @@ class ToDoController extends Controller
         return view('todos.edit', compact('todo'));
     }
 
-    public function update(Request $request, ToDo $todo) {
+    public function update(ToDoCreateRequest $request, ToDo $todo) {
         $todo->update(['title' => $request->title]);
         return redirect(route('todo.index'))->with('message', 'Updated!');
     }
