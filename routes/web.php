@@ -25,6 +25,8 @@ Route::get('/todos/{todo}/edit', 'ToDoController@edit');
 
 Route::patch('/todos/{todo}/update', 'ToDoController@update')->name('todo.update');
 
+Route::put('/todos/{todo}/complete', 'ToDoController@complete')->name('todo.complete');
+
 
 Route::get('/', function () {
     return view('welcome');
