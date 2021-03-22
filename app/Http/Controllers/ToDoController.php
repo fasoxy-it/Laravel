@@ -38,4 +38,9 @@ class ToDoController extends Controller
         $todo->update(['completed' => true]);
         return redirect()->back()->with('message', 'ToDo Completed!');
     }
+
+    public function incomplete(ToDo $todo) {
+        $todo->update(['completed' => false]);
+        return redirect()->back()->with('message', 'ToDo Incompleted!');
+    }
 }
