@@ -26,7 +26,7 @@ class ToDoController extends Controller
 
     public function store(ToDoCreateRequest $request) {
         auth()->user()->todos()->create($request->all());
-        return redirect()->back()->with('message', 'ToDo Created Successfully.');
+        return redirect(route('todo.index'))->with('message', 'ToDo Created Successfully.');
     }
 
     public function edit(ToDo $todo) {
