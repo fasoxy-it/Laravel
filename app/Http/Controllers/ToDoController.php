@@ -16,7 +16,7 @@ class ToDoController extends Controller
     }
 
     public function index() {
-        $todos = ToDo::orderBy('completed')->get();
+        $todos = auth()->user()->todos->sortBy('completed');
         return view('todos.index', compact('todos'));
     }
 
@@ -25,7 +25,7 @@ class ToDoController extends Controller
     }
 
     public function store(ToDoCreateRequest $request) {
-        ToDo::create($request->all());
+        auth()->user()->todos()->create($request->all());
         return redirect()->back()->with('message', 'ToDo Created Successfully.');
     }
 
