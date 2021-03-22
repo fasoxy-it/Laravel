@@ -15,12 +15,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::resource('/todo', 'ToDoController');
+//Route::middleware('auth')->group(function() {
 
+    Route::resource('/todo', 'ToDoController');
 
-Route::put('/todos/{todo}/complete', 'ToDoController@complete')->name('todo.complete');
+    Route::put('/todos/{todo}/complete', 'ToDoController@complete')->name('todo.complete');
 
-Route::delete('/todos/{todo}/incomplete', 'ToDoController@incomplete')->name('todo.incomplete');
+    Route::delete('/todos/{todo}/incomplete', 'ToDoController@incomplete')->name('todo.incomplete');
+
+//});
 
 
 Route::get('/', function () {

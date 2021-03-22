@@ -11,6 +11,10 @@ use function GuzzleHttp\Promise\all;
 
 class ToDoController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $todos = ToDo::orderBy('completed')->get();
         return view('todos.index', compact('todos'));
