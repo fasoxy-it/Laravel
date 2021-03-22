@@ -4,7 +4,7 @@
 
     <div class="flex justify-between border-b pb-4 px-4">
         <h1 class="text-2x1">All ToDos</h1>
-        <a href="/todos/create" class="mx-5 text-blue-400 cursor-pointer text-white">
+        <a href="{{route('todo.create')}}" class="mx-5 text-blue-400 cursor-pointer text-white">
             <span class="fas fa-plus-circle"/>
         </a>
     </div>
@@ -21,9 +21,9 @@
                 <p>{{$todo->title}}</p>
             @endif
             <div>
-                <a href="{{'/todos/' . $todo->id . '/edit/'}}" class="text-orange-400 cursor-pointer text-white"><span class="fas fa-edit px-2"/></a>
+                <a href="{{route('todo.edit', $todo->id)}}" class="text-orange-400 cursor-pointer text-white"><span class="fas fa-edit px-2"/></a>
                 <span onclick="event.preventDefault(); if(confirm('Are you really want to delete ToDo?')){document.getElementById('form-delete-{{$todo->id}}').submit();}" class="fas fa-trash text-red-500 cursor-pointer px-2"/>
-                <form style="display:none" id="{{'form-delete-' . $todo->id}}" method="post" action="{{route('todo.delete', $todo->id)}}">
+                <form style="display:none" id="{{'form-delete-' . $todo->id}}" method="post" action="{{route('todo.destroy', $todo->id)}}">
                     @csrf
                     @method('delete')
                 </form>

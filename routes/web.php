@@ -15,21 +15,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/todos', 'ToDoController@index')->name('todo.index');
+Route::resource('/todo', 'ToDoController');
 
-Route::get('/todos/create', 'ToDoController@create');
-
-Route::post('/todos/create', 'ToDoController@store');
-
-Route::get('/todos/{todo}/edit', 'ToDoController@edit');
-
-Route::patch('/todos/{todo}/update', 'ToDoController@update')->name('todo.update');
 
 Route::put('/todos/{todo}/complete', 'ToDoController@complete')->name('todo.complete');
 
 Route::delete('/todos/{todo}/incomplete', 'ToDoController@incomplete')->name('todo.incomplete');
-
-Route::delete('/todos/{todo}/delete', 'ToDoController@delete')->name('todo.delete');
 
 
 Route::get('/', function () {
