@@ -8,6 +8,8 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
+        @livewireStyles
+
         <title>Create New ToDo</title>
     </head>
     <body>
@@ -16,5 +18,8 @@
                 @yield('content')
             </div>
         </div>
+
+        @livewireScripts
+        
     </body>
 </html>
