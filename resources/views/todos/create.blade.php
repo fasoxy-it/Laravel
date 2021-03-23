@@ -29,6 +29,4 @@
         </div>
     </form>
 
-    @livewire('counter')
-
 @endsection
