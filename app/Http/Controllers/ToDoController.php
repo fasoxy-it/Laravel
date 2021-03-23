@@ -29,8 +29,12 @@ class ToDoController extends Controller
     }
 
     public function store(ToDoCreateRequest $request) {
-        dd($request->all());
-        auth()->user()->todos()->create($request->all());
+        $todo = auth()->user()->todos()->create($request->all());
+        if($request->steps) {
+            foreach($request->steps as $step) {
+                $todo->steps()->create(['name' => $step]);
+            }
+        }
         return redirect(route('todo.index'))->with('message', 'ToDo Created Successfully.');
     }
 

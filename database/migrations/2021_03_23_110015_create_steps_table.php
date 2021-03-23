@@ -16,8 +16,8 @@ class CreateStepsTable extends Migration
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('todo_id');
-            $table->foreign('todo_id')->references('id')->on('to_dos');
+            $table->unsignedBigInteger('to_do_id');
+            $table->foreign('to_do_id')->references('id')->on('to_dos');
             $table->timestamps();
         });
     }
