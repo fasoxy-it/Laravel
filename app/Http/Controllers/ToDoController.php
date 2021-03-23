@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ToDoCreateRequest;
 use App\Models\ToDo;
+use App\Models\Step;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -44,6 +45,17 @@ class ToDoController extends Controller
 
     public function update(ToDoCreateRequest $request, ToDo $todo) {
         $todo->update(['title' => $request->title]);
+        if($request->stepsName) {
+            foreach($request->stepsName as $key => $value) {
+                $id = $request->stepId[$key];
+                if(!$id) {
+                    $todo->steps()->create(['name' => $value]);
+                } else {
+                    $step = Step::find($id);
+                    $step->update(['name' => $value]);
+                }
+            }
+        }
         return redirect(route('todo.index'))->with('message', 'Updated!');
     }
 
