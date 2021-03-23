@@ -22,6 +22,7 @@
                 <h2 class="text-lg pb-4">Add Steps for ToDo</h2>
                 <span class="fas fa-plus px-2 py-1 cursor-pointer"/>
             </div>
+            @livewire('step')
             <input type="text" name="step" class="py-2 px-2 border rounded" placeholder="Description Step">
         </div>
         <div class="py-1">
