@@ -58,6 +58,7 @@ class ToDoController extends Controller
     }
 
     public function destroy(ToDo $todo) {
+        $todo->steps->each->delete();
         $todo->delete();
         return redirect()->back()->with('message', 'ToDo Deleted!');
     }
