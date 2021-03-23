@@ -24,6 +24,10 @@ class ToDoController extends Controller
         return view('todos.create');
     }
 
+    public function show(ToDo $todo) {
+        return view('todos.show', compact('todo'));
+    }
+
     public function store(ToDoCreateRequest $request) {
         auth()->user()->todos()->create($request->all());
         return redirect(route('todo.index'))->with('message', 'ToDo Created Successfully.');
