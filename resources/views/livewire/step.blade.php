@@ -6,7 +6,7 @@
 
     @foreach($steps as $step)
         <div class="flex justify-center py-1">
-            <input type="text" name="step" class="py-1 px-2 border rounded" placeholder="{{'Description Step ' . $step}}">
+            <input type="text" name="step[]" class="py-1 px-2 border rounded" placeholder="{{'Description Step ' . $step}}">
             <span wire:click="remove({{$loop->index}})" class="fas fa-times text-red-400 p-2 cursor-pointer"/>
         </div>
     @endforeach
