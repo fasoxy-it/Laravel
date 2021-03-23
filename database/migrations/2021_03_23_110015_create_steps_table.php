@@ -17,6 +17,7 @@ class CreateStepsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('todo_id');
+            $table->foreign('todo_id')->references('id')->on('to_dos');
             $table->timestamps();
         });
     }
